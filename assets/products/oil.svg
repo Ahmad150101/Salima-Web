@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-labelledby="t d"><title id="t">زيت دوار الشمس سليمة</title><desc id="d">تصميم توضيحي لعبوة زيت دوار الشمس سليمة</desc>
+<defs><linearGradient id="o" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff8b0"/><stop offset=".55" stop-color="#f4c85b"/><stop offset="1" stop-color="#e89b23"/></linearGradient><linearGradient id="b" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#2d80f0"/><stop offset="1" stop-color="#0a2b67"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#082653" flood-opacity=".22"/></filter></defs>
+<ellipse cx="320" cy="466" rx="105" ry="22" fill="#0b2b61" opacity=".12"/>
+<path d="M265 74h110l8 69c40 15 66 52 66 95v184c0 30-24 54-54 54H245c-30 0-54-24-54-54V238c0-43 26-80 66-95z" fill="url(#o)" stroke="#e8ae35" stroke-width="6" filter="url(#s)"/>
+<rect x="255" y="43" width="130" height="57" rx="17" fill="#0a2b67"/>
+<rect x="220" y="218" width="200" height="178" rx="30" fill="url(#b)"/>
+<circle cx="320" cy="281" r="39" fill="#f4c85b"/><g stroke="#f4c85b" stroke-width="10" stroke-linecap="round"><path d="M320 224v-26"/><path d="M320 364v-26"/><path d="M263 281h-26"/><path d="M403 281h-26"/><path d="M279 240l-18-18"/><path d="M379 340l-18-18"/><path d="M361 240l18-18"/><path d="M261 340l18-18"/></g>
+<text x="320" y="342" text-anchor="middle" fill="#fff" font-size="37" font-family="Arial" font-weight="700">سليمة</text><text x="320" y="375" text-anchor="middle" fill="#fff" font-size="19" font-family="Arial">SUNFLOWER OIL</text>
+</svg>

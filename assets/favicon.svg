@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">شعار شركة سليمة</title>
+  <desc id="desc">حرف السين داخل علامة زرقاء مع ورقة ذهبية</desc>
+  <defs>
+    <linearGradient id="g" x1="20" y1="18" x2="138" y2="145" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2D80F0"/>
+      <stop offset="1" stop-color="#0A2B67"/>
+    </linearGradient>
+    <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#092B65" flood-opacity=".24"/>
+    </filter>
+  </defs>
+  <rect x="14" y="14" width="132" height="132" rx="40" fill="url(#g)" filter="url(#s)"/>
+  <path d="M99 40c18 1 30 8 37 23-18 1-31-5-39-18-5 13-4 26 4 38" fill="none" stroke="#F4C85B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M51 61c0 11 8 18 24 18h14c11 0 18 6 18 15 0 13-13 22-32 22-15 0-28-4-38-13" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="43" cy="60" r="6" fill="#F4C85B"/>
+</svg>

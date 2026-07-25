@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-labelledby="t d">
+<title id="t">أرز سليمة</title><desc id="d">تصميم توضيحي لعبوة أرز سليمة</desc>
+<defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f9fcff"/><stop offset="1" stop-color="#dbeaff"/></linearGradient><linearGradient id="p" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#2d80f0"/><stop offset="1" stop-color="#0a2b67"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#082653" flood-opacity=".22"/></filter></defs>
+<ellipse cx="320" cy="458" rx="150" ry="25" fill="#0b2b61" opacity=".12"/>
+<path d="M198 82h244l32 339c2 25-17 47-42 47H208c-25 0-44-22-42-47z" fill="url(#b)" stroke="#c2daf7" stroke-width="6" filter="url(#s)"/>
+<path d="M198 82h244l9 97H189z" fill="url(#p)"/>
+<path d="M218 58h204c13 0 24 11 24 24v18H194V82c0-13 11-24 24-24z" fill="#f4c85b"/>
+<circle cx="320" cy="284" r="104" fill="#fff" stroke="#d9e8fa" stroke-width="6"/>
+<g fill="#f4f0dd" stroke="#d7c997" stroke-width="2"><ellipse cx="267" cy="306" rx="12" ry="27" transform="rotate(-30 267 306)"/><ellipse cx="300" cy="330" rx="12" ry="27" transform="rotate(18 300 330)"/><ellipse cx="339" cy="316" rx="12" ry="27" transform="rotate(-12 339 316)"/><ellipse cx="372" cy="296" rx="12" ry="27" transform="rotate(31 372 296)"/><ellipse cx="321" cy="283" rx="12" ry="27" transform="rotate(37 321 283)"/></g>
+<text x="320" y="135" text-anchor="middle" fill="#fff" font-size="43" font-family="Arial" font-weight="700">SALIMA</text>
+<text x="320" y="243" text-anchor="middle" fill="#0b2b61" font-size="46" font-family="Arial" font-weight="700">أرز</text>
+<text x="320" y="400" text-anchor="middle" fill="#2674d9" font-size="26" font-family="Arial">RICE</text>
+</svg>
