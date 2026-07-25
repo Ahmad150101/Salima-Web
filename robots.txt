@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ahmad150101.github.io/Salima-website/sitemap.xml

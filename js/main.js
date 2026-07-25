@@ -1,4 +1,4 @@
-"use strict";
+﻿"use strict";
 
 const translations = {
   ar: {
@@ -7,7 +7,12 @@ const translations = {
     heroEyebrow: "منتجات يومية مختارة بعناية", heroTitle: "جودة <span>تصل</span> إلى كل بيت",
     heroText: "اكتشف مجموعة سليمة من المنتجات الغذائية والمنزلية الأساسية، ضمن كتالوج واضح وسريع صُمم لتشاهد كل منتج بسهولة.",
     explore: "استكشف المنتجات", aboutLink: "تعرّف علينا", statProducts: "منتجات أساسية", statResponsive: "متوافق مع الهاتف", statLanguages: "لغتان",
-    featured: "منتج مميز", clearCatalog: "كتالوج واضح", easyBrowse: "تصفح سريع وسهل",
+    featured: "مميز", clearCatalog: "كتالوج واضح", easyBrowse: "تصفح سريع وسهل", viewAllProducts: "عرض جميع المنتجات",
+    filterBrand: "العلامة التجارية", filterType: "النوع", filterWeight: "الوزن", clearFilters: "مسح الفلاتر", allOptions: "الكل",
+    zoomImage: "تكبير الصورة", openProductPage: "فتح صفحة المنتج", relatedTitle: "قد يعجبك أيضًا", footerResources: "المصادر",
+    guideKicker: "دليل سريع", guideTitle: "اختر المنتج المناسب لك", guideBasmatiTitle: "أرز بسمتي", guideBasmatiText: "للأطباق التي تحتاج حبة طويلة ومفلفلة.", guideJasmineTitle: "أرز ياسمين", guideJasmineText: "للأطباق العطرية والوصفات الآسيوية.", guideCamolinoTitle: "أرز كامولينو", guideCamolinoText: "للاستخدام اليومي والوصفات المنزلية.", guideCannedTitle: "المعلبات", guideCannedText: "للوجبات والحلول السريعة.", guideTissuesTitle: "المحارم", guideTissuesText: "للاستخدام المنزلي اليومي.",
+    contactKicker: "التواصل", contactTitle: "بيانات التواصل", contactText: "ستُضاف بيانات التواصل الرسمية عند توفرها.", contactPending: "قيد التحديث",
+    productCategories: "فئات المنتجات", footerRice: "الأرز", footerCanned: "المعلبات", footerOil: "الزيوت", footerTissues: "المحارم",
     catalogKicker: "كتالوج سليمة", productsTitle: "كل احتياجاتك الأساسية في مكان واحد",
     productsIntro: "ابحث عن المنتج أو استخدم التصنيفات للوصول إليه بسرعة، ثم افتح البطاقة لمعرفة التفاصيل.", searchPlaceholder: "ابحث عن منتج...",
     noResultsTitle: "لا توجد منتجات مطابقة", noResultsText: "جرّب كلمة بحث مختلفة أو اختر جميع المنتجات.", showAll: "عرض جميع المنتجات",
@@ -23,8 +28,8 @@ const translations = {
     footerText: "كتالوج رقمي خفيف وسريع لعرض منتجات الشركة من أي جهاز.", quickLinks: "روابط سريعة", sitePurpose: "هدف الموقع", sitePurposeText: "عرض المنتجات فقط دون تسجيل أو بيع أو شراء.", rights: "جميع الحقوق محفوظة.", languageLabel: "English version",
     detailUse: "الاستخدام المقترح", detailStorage: "التخزين", detailPackaging: "العبوة", detailsDisclaimer: "ملاحظة: الصور والبيانات الحالية توضيحية ويمكن استبدالها ببيانات العبوة الرسمية.",
     viewDetails: "عرض التفاصيل", results: "نعرض {count} من أصل {total} منتجات", themeDark: "تفعيل الوضع الداكن", themeLight: "تفعيل الوضع الفاتح", menuOpen: "فتح القائمة", menuClose: "إغلاق القائمة",
-    brandsKicker: "علاماتنا التجارية", brandsTitle: "تشكيلة متنوعة تحت سقف واحد", brandsIntro: "اختر العلامة التجارية لعرض منتجاتها مباشرة.", featuredKicker: "اختيارات مميزة", featuredTitle: "منتجات ننصحك باكتشافها", compareKicker: "دليل الأرز", compareTitle: "اختر الأرز المناسب لطبختك", compareIntro: "مقارنة سريعة بين الأنواع المتوفرة في الكتالوج.", compareProduct: "المنتج", compareType: "النوع", compareWeight: "الوزن", compareUse: "الاستخدام المقترح", basmatiLong: "بسمتي طويل الحبة", jasmineRice: "أرز ياسمين عطري", indianBasmati: "بسمتي هندي", camolinoRice: "كامولينو أبيض", useKabsa: "الكبسة والمندي", useAsian: "الأطباق الآسيوية", useBiryani: "البرياني والأرز المفلفل", useDaily: "الطبخ اليومي والمحاشي", catalogPdfKicker: "نسخة قابلة للحفظ", catalogPdfTitle: "حمّل كتالوج سليمة PDF", catalogPdfText: "نسخة مختصرة تضم أبرز المنتجات والصور.", downloadCatalog: "تحميل الكتالوج", faqKicker: "الأسئلة الشائعة", faqTitle: "معلومات سريعة قبل التصفح", faq1q: "هل الموقع متجر إلكتروني؟", faq1a: "لا، الموقع مخصص للتعرف على منتجات سليمة وعرض معلوماتها فقط.", faq2q: "هل تتوفر المنتجات بأحجام مختلفة؟", faq2a: "تختلف الأحجام حسب المنتج والتوفر، وتظهر الأحجام المؤكدة داخل تفاصيل المنتج.", faq3q: "كيف أشاهد تفاصيل المنتج؟", faq3a: "اضغط على زر عرض التفاصيل داخل أي بطاقة.", locationKicker: "نطاق التواجد", locationTitle: "الضفة الغربية", locationText: "الخريطة الحالية تعرض الضفة الغربية كنطاق افتراضي للشركة. عند توفر العنوان الدقيق يمكن تثبيت موقع الفرع مباشرة.", openMap: "فتح في خرائط Google",
-    categories: { all: "جميع المنتجات", food: "مواد غذائية", home: "منتجات منزلية", oil: "زيوت غذائية", canned: "معلبات" }
+    brandsKicker: "علاماتنا التجارية", brandsTitle: "تشكيلة متنوعة تحت سقف واحد", brandsIntro: "اختر العلامة التجارية لعرض منتجاتها مباشرة.", featuredKicker: "اختيارات مميزة", featuredTitle: "منتجاتنا المميزة", compareKicker: "دليل الأرز", compareTitle: "اختر الأرز المناسب لطبختك", compareIntro: "مقارنة سريعة بين الأنواع المتوفرة في الكتالوج.", compareProduct: "المنتج", compareType: "النوع", compareWeight: "الوزن", compareUse: "الاستخدام المقترح", basmatiLong: "بسمتي طويل الحبة", jasmineRice: "أرز ياسمين عطري", indianBasmati: "بسمتي هندي", camolinoRice: "كامولينو أبيض", useKabsa: "الكبسة والمندي", useAsian: "الأطباق الآسيوية", useBiryani: "البرياني والأرز المفلفل", useDaily: "الطبخ اليومي والمحاشي", catalogPdfKicker: "نسخة قابلة للحفظ", catalogPdfTitle: "حمّل كتالوج سليمة PDF", catalogPdfText: "نسخة مختصرة تضم أبرز المنتجات والصور.", downloadCatalog: "تحميل الكتالوج", faqKicker: "الأسئلة الشائعة", faqTitle: "معلومات سريعة قبل التصفح", faq1q: "هل الموقع متجر إلكتروني؟", faq1a: "لا، الموقع مخصص للتعرف على منتجات سليمة وعرض معلوماتها فقط.", faq2q: "هل تتوفر المنتجات بأحجام مختلفة؟", faq2a: "تختلف الأحجام حسب المنتج والتوفر، وتظهر الأحجام المؤكدة داخل تفاصيل المنتج.", faq3q: "كيف أشاهد تفاصيل المنتج؟", faq3a: "اضغط على زر عرض التفاصيل داخل أي بطاقة.", locationKicker: "نطاق التواجد", locationTitle: "الضفة الغربية", locationText: "نطاق التوزيع داخل الضفة الغربية، وتعرض الخريطة النطاق العام دون تحديد عنوان غير مؤكد.", openMap: "فتح في خرائط Google",
+    categories: { all: "جميع المنتجات", food: "مواد غذائية", home: "منتجات منزلية", oil: "زيوت غذائية", canned: "معلبات" }, groups: { all: "جميع المنتجات", rice: "الأرز", canned: "المعلبات", oil: "الزيوت", tissues: "المحارم", other: "منتجات أخرى" }
   },
   en: {
     skip: "Skip to content", company: "Salima Company", tagline: "Quality for every home",
@@ -32,7 +37,12 @@ const translations = {
     heroEyebrow: "Everyday products selected with care", heroTitle: "Quality <span>made</span> for every home",
     heroText: "Explore Salima's range of essential food and household products through a clear, fast catalog designed for effortless browsing.",
     explore: "Explore products", aboutLink: "About us", statProducts: "Core products", statResponsive: "Mobile friendly", statLanguages: "Languages",
-    featured: "Featured product", clearCatalog: "Clear catalog", easyBrowse: "Fast and easy browsing",
+    featured: "Featured", clearCatalog: "Clear catalog", easyBrowse: "Fast and easy browsing", viewAllProducts: "View All Products",
+    filterBrand: "Brand", filterType: "Type", filterWeight: "Weight", clearFilters: "Clear filters", allOptions: "All",
+    zoomImage: "Enlarge image", openProductPage: "Open Product Page", relatedTitle: "You May Also Like", footerResources: "Resources",
+    guideKicker: "Quick guide", guideTitle: "Choose the Right Product", guideBasmatiTitle: "Basmati Rice", guideBasmatiText: "For dishes that call for long, separate grains.", guideJasmineTitle: "Jasmine Rice", guideJasmineText: "For aromatic dishes and Asian recipes.", guideCamolinoTitle: "Camolino Rice", guideCamolinoText: "For everyday cooking and home recipes.", guideCannedTitle: "Canned Goods", guideCannedText: "For quick meals and convenient options.", guideTissuesTitle: "Tissues", guideTissuesText: "For everyday household use.",
+    contactKicker: "Contact", contactTitle: "Contact details", contactText: "Official contact details will be added when available.", contactPending: "Pending update",
+    productCategories: "Product categories", footerRice: "Rice", footerCanned: "Canned goods", footerOil: "Oils", footerTissues: "Tissues",
     catalogKicker: "Salima catalog", productsTitle: "Everyday essentials in one place",
     productsIntro: "Search for a product or use categories to find it quickly, then open the card to view details.", searchPlaceholder: "Search products...",
     noResultsTitle: "No matching products", noResultsText: "Try another search term or choose all products.", showAll: "Show all products",
@@ -48,8 +58,8 @@ const translations = {
     footerText: "A lightweight, fast digital catalog for viewing company products on any device.", quickLinks: "Quick links", sitePurpose: "Website purpose", sitePurposeText: "Product display only, with no accounts, sales, or purchases.", rights: "All rights reserved.", languageLabel: "النسخة العربية",
     detailUse: "Suggested use", detailStorage: "Storage", detailPackaging: "Packaging", detailsDisclaimer: "Note: Current images and details are illustrative and can be replaced with official package information.",
     viewDetails: "View details", results: "Showing {count} of {total} products", themeDark: "Enable dark mode", themeLight: "Enable light mode", menuOpen: "Open menu", menuClose: "Close menu",
-    brandsKicker: "Our brands", brandsTitle: "A varied portfolio in one place", brandsIntro: "Choose a brand to display its products instantly.", featuredKicker: "Featured picks", featuredTitle: "Products worth discovering", compareKicker: "Rice guide", compareTitle: "Choose the right rice for your dish", compareIntro: "A quick comparison of rice varieties in the catalog.", compareProduct: "Product", compareType: "Type", compareWeight: "Weight", compareUse: "Suggested use", basmatiLong: "Extra-long basmati", jasmineRice: "Fragrant jasmine rice", indianBasmati: "Indian basmati", camolinoRice: "White camolino", useKabsa: "Kabsa and mandi", useAsian: "Asian dishes", useBiryani: "Biryani and fluffy rice", useDaily: "Daily cooking and stuffed dishes", catalogPdfKicker: "Save a copy", catalogPdfTitle: "Download the Salima PDF catalog", catalogPdfText: "A concise copy featuring key products and images.", downloadCatalog: "Download catalog", faqKicker: "Frequently asked questions", faqTitle: "Quick information before browsing", faq1q: "Is this an online store?", faq1a: "No. The website is only for discovering Salima products and information.", faq2q: "Are products available in different sizes?", faq2a: "Sizes vary by product and availability; confirmed sizes appear in product details.", faq3q: "How can I see product details?", faq3a: "Select View details on any product card.", locationKicker: "Service area", locationTitle: "West Bank", locationText: "The current map shows the West Bank as the company's assumed area. A precise branch pin can be added when the address is available.", openMap: "Open in Google Maps",
-    categories: { all: "All products", food: "Food", home: "Household", oil: "Cooking oils", canned: "Canned goods" }
+    brandsKicker: "Our brands", brandsTitle: "A varied portfolio in one place", brandsIntro: "Choose a brand to display its products instantly.", featuredKicker: "Featured picks", featuredTitle: "Featured Products", compareKicker: "Rice guide", compareTitle: "Choose the right rice for your dish", compareIntro: "A quick comparison of rice varieties in the catalog.", compareProduct: "Product", compareType: "Type", compareWeight: "Weight", compareUse: "Suggested use", basmatiLong: "Extra-long basmati", jasmineRice: "Fragrant jasmine rice", indianBasmati: "Indian basmati", camolinoRice: "White camolino", useKabsa: "Kabsa and mandi", useAsian: "Asian dishes", useBiryani: "Biryani and fluffy rice", useDaily: "Daily cooking and stuffed dishes", catalogPdfKicker: "Save a copy", catalogPdfTitle: "Download the Salima PDF catalog", catalogPdfText: "A concise copy featuring key products and images.", downloadCatalog: "Download catalog", faqKicker: "Frequently asked questions", faqTitle: "Quick information before browsing", faq1q: "Is this an online store?", faq1a: "No. The website is only for discovering Salima products and information.", faq2q: "Are products available in different sizes?", faq2a: "Sizes vary by product and availability; confirmed sizes appear in product details.", faq3q: "How can I see product details?", faq3a: "Select View details on any product card.", locationKicker: "Service area", locationTitle: "West Bank", locationText: "The distribution area is within the West Bank; the map shows the general area without an unverified address.", openMap: "Open in Google Maps",
+    categories: { all: "All products", food: "Food", home: "Household", oil: "Cooking oils", canned: "Canned goods" }, groups: { all: "All products", rice: "Rice", canned: "Canned goods", oil: "Oils", tissues: "Tissues", other: "Other products" }
   }
 };
 
@@ -70,6 +80,8 @@ const state = {
   category: "all",
   search: "",
   brand: "all",
+  type: "all",
+  weight: "all",
   lightboxIndex: 0
 };
 
@@ -82,15 +94,20 @@ const elements = {
   themeToggle: $("#themeToggle"), languageToggle: $("#languageToggle"), footerLanguage: $("#footerLanguage"),
   search: $("#productSearch"), clearSearch: $("#clearSearch"), filterList: $("#filterList"), productsGrid: $("#productsGrid"),
   resultsSummary: $("#resultsSummary"), emptyState: $("#emptyState"), resetFilters: $("#resetFilters"), galleryGrid: $("#galleryGrid"),
-  brandFilter: $("#brandFilter"), featuredGrid: $("#featuredGrid"), sliderDots: $("#sliderDots"),
+  brandFilter: $("#brandFilter"), featuredGrid: $("#featuredGrid"), sliderDots: $("#sliderDots"), sliderPrev: $("#sliderPrev"), sliderNext: $("#sliderNext"),
+  brandSelect: $("#brandSelect"), typeSelect: $("#typeSelect"), weightSelect: $("#weightSelect"), clearFilters: $("#clearFilters"),
   toTop: $("#toTop"), year: $("#year"),
   modal: $("#productModal"), modalClose: $("#modalClose"), modalImage: $("#modalImage"), modalCategory: $("#modalCategory"),
   modalTitle: $("#modalTitle"), modalDescription: $("#modalDescription"), modalUse: $("#modalUse"), modalStorage: $("#modalStorage"), modalPackaging: $("#modalPackaging"),
+  modalMeta: $("#modalMeta"), modalZoom: $("#modalZoom"), productPageLink: $("#productPageLink"), relatedProducts: $("#relatedProducts"), relatedGrid: $("#relatedGrid"),
   lightbox: $("#lightbox"), lightboxClose: $("#lightboxClose"), lightboxPrev: $("#lightboxPrev"), lightboxNext: $("#lightboxNext"), lightboxImage: $("#lightboxImage"), lightboxCaption: $("#lightboxCaption")
 };
 
 function t(key) { return translations[state.language][key]; }
 function getProductText(product) { return product[state.language]; }
+function getBrand(product) {
+  return SALIMA_BRANDS.find((brand) => brand.id === product.brand)?.[state.language] || product.brand;
+}
 function normalize(value) { return value.trim().toLocaleLowerCase(state.language === "ar" ? "ar" : "en"); }
 
 function applyTheme() {
@@ -129,6 +146,7 @@ function applyTranslations() {
   applyTheme();
   renderFilters();
   renderBrands();
+  renderAdvancedFilters();
   renderProducts();
   renderFeatured();
   renderGallery();
@@ -154,22 +172,34 @@ function renderFeatured() {
 }
 
 function renderFilters() {
-  const categories = ["all", "food", "home", "oil", "canned"];
+  const categories = ["all", "rice", "canned", "oil", "tissues", "other"];
   elements.filterList.innerHTML = categories.map((category) => `
     <button type="button" class="filter-btn ${state.category === category ? "active" : ""}" data-category="${category}">
-      ${t("categories")[category]}
+      ${t("groups")[category]}
     </button>
   `).join("");
+}
+
+function renderAdvancedFilters() {
+  const option = (value, label, selected) => `<option value="${value}" ${selected === value ? "selected" : ""}>${label}</option>`;
+  const types = [...new Map(SALIMA_PRODUCTS.map(product => [product.type.en, product.type[state.language]])).entries()];
+  const weights = [...new Set(SALIMA_PRODUCTS.map(product => product.weight).filter(Boolean))];
+  elements.brandSelect.innerHTML = option("all", t("allOptions"), state.brand) + SALIMA_BRANDS.filter(brand => brand.id !== "all").map(brand => option(brand.id, brand[state.language], state.brand)).join("");
+  elements.typeSelect.innerHTML = option("all", t("allOptions"), state.type) + types.map(([value, label]) => option(value, label, state.type)).join("");
+  elements.weightSelect.innerHTML = option("all", t("allOptions"), state.weight) + weights.map(weight => option(weight, weight, state.weight)).join("");
 }
 
 function filteredProducts() {
   const query = normalize(state.search);
   return SALIMA_PRODUCTS.filter((product) => {
     const text = getProductText(product);
-    const matchesCategory = state.category === "all" || product.category === state.category;
+    const brand = SALIMA_BRANDS.find(item => item.id === product.brand);
+    const matchesCategory = state.category === "all" || product.group === state.category || (state.category === "other" && !["rice", "canned", "oil", "tissues"].includes(product.group));
     const matchesBrand = state.brand === "all" || product.brand === state.brand;
-    const searchable = normalize(`${text.name} ${text.short} ${t("categories")[product.category]}`);
-    return matchesCategory && matchesBrand && (!query || searchable.includes(query));
+    const matchesType = state.type === "all" || product.type.en === state.type;
+    const matchesWeight = state.weight === "all" || product.weight === state.weight;
+    const searchable = normalize(`${product.ar.name} ${product.en.name} ${brand?.ar || ""} ${brand?.en || ""} ${t("categories")[product.category]} ${product.type.ar} ${product.type.en} ${text.short}`);
+    return matchesCategory && matchesBrand && matchesType && matchesWeight && (!query || searchable.includes(query));
   });
 }
 
@@ -178,11 +208,12 @@ function productCard(product, index) {
   return `
     <article class="product-card reveal" data-product-id="${product.id}">
       <div class="product-media">
-        <span class="product-category">${t("categories")[product.category]}</span>${product.weight ? `<span class="product-weight">${product.weight}</span>` : ""}
-        <img src="${product.image}" alt="${text.name}" loading="lazy" width="640" height="520">
+        <span class="product-category">${product.featured ? t("featured") : t("categories")[product.category]}</span>${product.weight ? `<span class="product-weight">${product.weight}</span>` : ""}
+        <img src="${product.image}" alt="${text.name}" loading="lazy" decoding="async" width="1122" height="1402">
       </div>
       <div class="product-body">
         <div class="product-title-row"><h3>${text.name}</h3><span class="product-number">0${index + 1}</span></div>
+        <div class="product-meta"><span>${getBrand(product)}</span><span>${product.type[state.language]}</span></div>
         <p>${text.short}</p>
         <button class="product-details-btn" type="button" data-open-product="${product.id}" aria-label="${t("viewDetails")}: ${text.name}">
           <span>${t("viewDetails")}</span><span aria-hidden="true">→</span>
@@ -205,7 +236,7 @@ function renderProducts() {
 function renderGallery() {
   elements.galleryGrid.innerHTML = SALIMA_PRODUCTS.map((product, index) => {
     const text = getProductText(product);
-    return `<button class="gallery-item reveal" type="button" data-gallery-index="${index}" aria-label="${text.name}"><img src="${product.image}" alt="${text.name}" loading="lazy"><span class="gallery-label">${text.name}</span></button>`;
+    return `<button class="gallery-item reveal" type="button" data-gallery-index="${index}" aria-label="${text.name}"><img src="${product.image}" alt="${text.name}" loading="lazy" decoding="async" width="1122" height="1402"><span class="gallery-label">${text.name}</span></button>`;
   }).join("");
   initRevealObserver(elements.galleryGrid);
 }
@@ -219,10 +250,19 @@ function openProduct(productId) {
   elements.modalImage.alt = text.name;
   elements.modalCategory.textContent = t("categories")[product.category];
   elements.modalTitle.textContent = text.name;
+  elements.modalMeta.innerHTML = [getBrand(product), product.type[state.language], product.weight].filter(Boolean).map(value => `<span>${value}</span>`).join("");
   elements.modalDescription.textContent = text.description;
   elements.modalUse.textContent = text.use;
   elements.modalStorage.textContent = text.storage;
   elements.modalPackaging.textContent = text.packaging;
+  elements.productPageLink.href = `./product.html?id=${encodeURIComponent(product.id)}&lang=${state.language}`;
+  const related = SALIMA_PRODUCTS.filter(item => item.category === product.category && item.id !== product.id).slice(0, 3);
+  elements.relatedProducts.hidden = related.length === 0;
+  elements.relatedGrid.innerHTML = related.map(item => {
+    const relatedText = getProductText(item);
+    return `<button type="button" data-open-product="${item.id}"><img src="${item.image}" alt="${relatedText.name}" width="1122" height="1402" loading="lazy"><span>${relatedText.name}</span></button>`;
+  }).join("");
+  if (!elements.modal.open) state.lastProductTrigger = document.activeElement;
   if (!elements.modal.open) elements.modal.showModal();
   document.body.classList.add("modal-open");
 }
@@ -319,6 +359,11 @@ function bindEvents() {
   elements.footerLanguage.addEventListener("click", toggleLanguage);
   elements.menuBtn.addEventListener("click", () => setMenu(!elements.nav.classList.contains("open")));
   $$("#mainNav a").forEach((link) => link.addEventListener("click", () => setMenu(false)));
+  $$("[data-footer-group]").forEach((link) => link.addEventListener("click", () => {
+    state.category = link.dataset.footerGroup;
+    renderFilters();
+    renderProducts();
+  }));
 
   elements.filterList.addEventListener("click", (event) => {
     const button = event.target.closest("[data-category]");
@@ -334,6 +379,7 @@ function bindEvents() {
     if (!button) return;
     state.brand = button.dataset.brand;
     renderBrands();
+    renderAdvancedFilters();
     renderProducts();
     document.querySelector("#products").scrollIntoView({behavior:"smooth"});
   });
@@ -356,11 +402,19 @@ function bindEvents() {
   elements.resetFilters.addEventListener("click", () => {
     state.category = "all";
     state.brand = "all";
+    state.type = "all";
+    state.weight = "all";
     state.search = "";
     elements.search.value = "";
     renderFilters();
+    renderBrands();
+    renderAdvancedFilters();
     renderProducts();
   });
+  elements.clearFilters.addEventListener("click", () => elements.resetFilters.click());
+  elements.brandSelect.addEventListener("change", (event) => { state.brand = event.target.value; renderBrands(); renderProducts(); });
+  elements.typeSelect.addEventListener("change", (event) => { state.type = event.target.value; renderProducts(); });
+  elements.weightSelect.addEventListener("change", (event) => { state.weight = event.target.value; renderProducts(); });
 
   elements.productsGrid.addEventListener("click", (event) => {
     const button = event.target.closest("[data-open-product]");
@@ -368,7 +422,18 @@ function bindEvents() {
   });
   elements.modalClose.addEventListener("click", () => closeDialog(elements.modal));
   elements.modal.addEventListener("click", (event) => { if (event.target === elements.modal) closeDialog(elements.modal); });
-  elements.modal.addEventListener("close", () => document.body.classList.remove("modal-open"));
+  elements.modal.addEventListener("close", () => {
+    if (!elements.lightbox.open) document.body.classList.remove("modal-open");
+    state.lastProductTrigger?.focus?.();
+  });
+  elements.modalZoom.addEventListener("click", () => {
+    const index = SALIMA_PRODUCTS.findIndex(product => product.id === elements.modal.dataset.productId);
+    if (index >= 0) openLightbox(index);
+  });
+  elements.relatedGrid.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-open-product]");
+    if (button) openProduct(button.dataset.openProduct);
+  });
 
   elements.galleryGrid.addEventListener("click", (event) => {
     const button = event.target.closest("[data-gallery-index]");
@@ -378,7 +443,9 @@ function bindEvents() {
   elements.lightboxPrev.addEventListener("click", () => openLightbox(state.lightboxIndex - 1));
   elements.lightboxNext.addEventListener("click", () => openLightbox(state.lightboxIndex + 1));
   elements.lightbox.addEventListener("click", (event) => { if (event.target === elements.lightbox) closeDialog(elements.lightbox); });
-  elements.lightbox.addEventListener("close", () => document.body.classList.remove("modal-open"));
+  elements.lightbox.addEventListener("close", () => {
+    if (!elements.modal.open) document.body.classList.remove("modal-open");
+  });
 
   document.addEventListener("keydown", (event) => {
     if (elements.lightbox.open && event.key === "ArrowLeft") openLightbox(state.lightboxIndex + (state.language === "ar" ? 1 : -1));
@@ -390,15 +457,15 @@ function bindEvents() {
   window.addEventListener("resize", () => { if (window.innerWidth > 880) setMenu(false); });
 }
 
-function init() {
-  elements.year.textContent = new Date().getFullYear();
-  elements.search.value = state.search;
-  applyTranslations();
-  bindEvents();
-  initRevealObserver();
-  animateCounters();
-  updateScrollUI();
-  const slides = $$(".hero-slide"); const dots = $$("#sliderDots button"); let slideIndex = 0;
+function initHeroSlider() {
+  const slider = $(".hero-slider");
+  const slides = $$(".hero-slide");
+  const dots = $$("#sliderDots button");
+  if (!slider || slides.length === 0) return;
+  let slideIndex = 0;
+  let timer = null;
+  let pointerStart = null;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const showSlide = (index) => {
     slideIndex = (index + slides.length) % slides.length;
     slides.forEach((slide, i) => slide.classList.toggle("active", i === slideIndex));
@@ -407,11 +474,40 @@ function init() {
       dot.setAttribute("aria-current", i === slideIndex ? "true" : "false");
     });
   };
-  dots.forEach((dot, index) => dot.addEventListener("click", () => showSlide(index)));
-  if (slides.length > 1 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    window.setInterval(() => showSlide(slideIndex + 1), 4200);
-  }
-  if (slides.length) showSlide(0);
+  const stop = () => { if (timer) window.clearInterval(timer); timer = null; };
+  const start = () => {
+    stop();
+    if (!reducedMotion.matches && !document.hidden && !slider.matches(":hover")) {
+      timer = window.setInterval(() => showSlide(slideIndex + 1), 4200);
+    }
+  };
+  dots.forEach((dot, index) => dot.addEventListener("click", () => { showSlide(index); start(); }));
+  elements.sliderPrev.addEventListener("click", () => { showSlide(slideIndex - 1); start(); });
+  elements.sliderNext.addEventListener("click", () => { showSlide(slideIndex + 1); start(); });
+  slider.addEventListener("mouseenter", stop);
+  slider.addEventListener("mouseleave", start);
+  document.addEventListener("visibilitychange", () => document.hidden ? stop() : start());
+  slider.addEventListener("pointerdown", event => { pointerStart = event.clientX; });
+  slider.addEventListener("pointerup", event => {
+    if (pointerStart === null) return;
+    const distance = event.clientX - pointerStart;
+    if (Math.abs(distance) > 45) showSlide(slideIndex + (distance < 0 ? 1 : -1));
+    pointerStart = null;
+    start();
+  });
+  showSlide(0);
+  start();
+}
+
+function init() {
+  elements.year.textContent = new Date().getFullYear();
+  elements.search.value = state.search;
+  applyTranslations();
+  bindEvents();
+  initRevealObserver();
+  animateCounters();
+  updateScrollUI();
+  initHeroSlider();
   window.setTimeout(() => elements.loader.classList.add("hide"), 450);
 }
 

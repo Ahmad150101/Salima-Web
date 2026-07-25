@@ -8,6 +8,13 @@
   <meta property="og:title" content="شركة سليمة | كتالوج المنتجات">
   <meta property="og:description" content="استكشف منتجات شركة سليمة الغذائية والمنزلية.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ahmad150101.github.io/Salima-website/">
+  <meta property="og:image" content="https://ahmad150101.github.io/Salima-website/assets/images/logo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="شركة سليمة | كتالوج المنتجات">
+  <meta name="twitter:description" content="استكشف منتجات شركة سليمة الغذائية والمنزلية.">
+  <meta name="twitter:image" content="https://ahmad150101.github.io/Salima-website/assets/images/logo.png">
+  <link rel="canonical" href="https://ahmad150101.github.io/Salima-website/">
   <title>شركة سليمة | كتالوج المنتجات</title>
   <link rel="icon" href="./assets/images/logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,8 +88,10 @@
         <div class="hero-showcase hero-slider reveal" aria-label="مجموعة من منتجات سليمة">
           <div class="showcase-glow"></div>
           <div class="hero-slide active"><img src="assets/products/real/all-products.png" alt="مجموعة منتجات سليمة" width="1122" height="1402" fetchpriority="high"></div>
-          <div class="hero-slide"><img src="assets/products/real/set-elkol-rice.png" alt="أرز ست الكل" width="1122" height="1402"></div>
-          <div class="hero-slide"><img src="assets/products/real/tuna.png" alt="تونة سليمة" width="1122" height="1402"></div>
+          <div class="hero-slide"><img src="assets/products/real/set-elkol-rice.png" alt="أرز ست الكل" width="1122" height="1402" decoding="async"></div>
+          <div class="hero-slide"><img src="assets/products/real/tuna.png" alt="تونة سليمة" width="1122" height="1402" decoding="async"></div>
+          <button class="slider-arrow slider-prev" id="sliderPrev" type="button" aria-label="الشريحة السابقة">‹</button>
+          <button class="slider-arrow slider-next" id="sliderNext" type="button" aria-label="الشريحة التالية">›</button>
           <div class="slider-dots" id="sliderDots"><button class="active" aria-label="الشريحة 1"></button><button aria-label="الشريحة 2"></button><button aria-label="الشريحة 3"></button></div>
           <div class="quality-chip">
             <span class="quality-icon">✓</span>
@@ -101,7 +110,7 @@
     </section>
 
     <section class="featured-section section" id="featuredProducts">
-      <div class="container"><div class="section-heading reveal"><span class="section-kicker" data-i18n="featuredKicker">اختيارات مميزة</span><h2 data-i18n="featuredTitle">منتجات ننصحك باكتشافها</h2></div><div class="featured-products" id="featuredGrid"></div></div>
+      <div class="container"><div class="section-heading reveal"><span class="section-kicker" data-i18n="featuredKicker">اختيارات مميزة</span><h2 data-i18n="featuredTitle">منتجاتنا المميزة</h2></div><div class="featured-products" id="featuredGrid"></div><div class="section-action"><a class="secondary-btn" href="#products" data-i18n="viewAllProducts">عرض جميع المنتجات</a></div></div>
     </section>
 
     <section class="products-section section" id="products">
@@ -119,6 +128,12 @@
             <button id="clearSearch" class="clear-search" type="button" aria-label="مسح البحث">×</button>
           </label>
           <div class="filter-list" id="filterList" aria-label="تصنيفات المنتجات"></div>
+          <div class="advanced-filters">
+            <label><span data-i18n="filterBrand">العلامة التجارية</span><select id="brandSelect"></select></label>
+            <label><span data-i18n="filterType">النوع</span><select id="typeSelect"></select></label>
+            <label><span data-i18n="filterWeight">الوزن</span><select id="weightSelect"></select></label>
+            <button class="secondary-btn" id="clearFilters" type="button" data-i18n="clearFilters">مسح الفلاتر</button>
+          </div>
         </div>
 
         <p class="results-summary" id="resultsSummary" aria-live="polite"></p>
@@ -129,6 +144,19 @@
           <h3 data-i18n="noResultsTitle">لا توجد منتجات مطابقة</h3>
           <p data-i18n="noResultsText">جرّب كلمة بحث مختلفة أو اختر جميع المنتجات.</p>
           <button class="secondary-btn" id="resetFilters" type="button" data-i18n="showAll">عرض جميع المنتجات</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-section section" id="guide">
+      <div class="container">
+        <div class="section-heading reveal"><span class="section-kicker" data-i18n="guideKicker">دليل سريع</span><h2 data-i18n="guideTitle">اختر المنتج المناسب لك</h2></div>
+        <div class="guide-grid">
+          <article class="guide-card reveal"><h3 data-i18n="guideBasmatiTitle">أرز بسمتي</h3><p data-i18n="guideBasmatiText">للأطباق التي تحتاج حبة طويلة ومفلفلة.</p></article>
+          <article class="guide-card reveal"><h3 data-i18n="guideJasmineTitle">أرز ياسمين</h3><p data-i18n="guideJasmineText">للأطباق العطرية والوصفات الآسيوية.</p></article>
+          <article class="guide-card reveal"><h3 data-i18n="guideCamolinoTitle">أرز كامولينو</h3><p data-i18n="guideCamolinoText">للاستخدام اليومي والوصفات المنزلية.</p></article>
+          <article class="guide-card reveal"><h3 data-i18n="guideCannedTitle">المعلبات</h3><p data-i18n="guideCannedText">للوجبات والحلول السريعة.</p></article>
+          <article class="guide-card reveal"><h3 data-i18n="guideTissuesTitle">المحارم</h3><p data-i18n="guideTissuesText">للاستخدام المنزلي اليومي.</p></article>
         </div>
       </div>
     </section>
@@ -188,14 +216,16 @@
 
     <section class="faq-section section" id="faq"><div class="container"><div class="section-heading reveal"><span class="section-kicker" data-i18n="faqKicker">الأسئلة الشائعة</span><h2 data-i18n="faqTitle">معلومات سريعة قبل التصفح</h2></div><div class="faq-list"><details class="reveal"><summary data-i18n="faq1q">هل الموقع متجر إلكتروني؟</summary><p data-i18n="faq1a">لا، الموقع مخصص للتعرف على منتجات سليمة وعرض معلوماتها فقط.</p></details><details class="reveal"><summary data-i18n="faq2q">هل تتوفر المنتجات بأحجام مختلفة؟</summary><p data-i18n="faq2a">تختلف الأحجام حسب المنتج والتوفر، وتظهر الأحجام المؤكدة داخل تفاصيل المنتج.</p></details><details class="reveal"><summary data-i18n="faq3q">كيف أشاهد تفاصيل المنتج؟</summary><p data-i18n="faq3a">اضغط على زر عرض التفاصيل داخل أي بطاقة.</p></details></div></div></section>
 
-    <section class="location-section section" id="location"><div class="container location-layout"><div class="location-copy reveal"><span class="section-kicker" data-i18n="locationKicker">نطاق التواجد</span><h2 data-i18n="locationTitle">الضفة الغربية</h2><p data-i18n="locationText">الخريطة الحالية تعرض الضفة الغربية كنطاق افتراضي للشركة. عند توفر العنوان الدقيق يمكن تثبيت موقع الفرع مباشرة.</p><a class="secondary-btn" href="https://www.google.com/maps/search/?api=1&query=West+Bank" target="_blank" rel="noopener" data-i18n="openMap">فتح في خرائط Google</a></div><div class="map-wrap reveal"><iframe title="خريطة الضفة الغربية" src="https://www.google.com/maps?q=West%20Bank&z=9&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div></section>
+    <section class="location-section section" id="location"><div class="container location-layout"><div class="location-copy reveal"><span class="section-kicker" data-i18n="locationKicker">نطاق التواجد</span><h2 data-i18n="locationTitle">الضفة الغربية</h2><p data-i18n="locationText">نطاق التوزيع داخل الضفة الغربية، وتعرض الخريطة النطاق العام دون تحديد عنوان غير مؤكد.</p><a class="secondary-btn" href="https://www.google.com/maps/search/?api=1&query=West+Bank" target="_blank" rel="noopener" data-i18n="openMap">فتح في خرائط Google</a></div><div class="map-wrap reveal"><iframe title="خريطة الضفة الغربية" src="https://www.google.com/maps?q=West%20Bank&z=9&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div></section>
+
+    <section class="contact-section section" id="contact"><div class="container contact-card reveal"><div><span class="section-kicker" data-i18n="contactKicker">التواصل</span><h2 data-i18n="contactTitle">بيانات التواصل</h2><p data-i18n="contactText">ستُضاف بيانات التواصل الرسمية عند توفرها.</p></div><span class="contact-status" data-i18n="contactPending">قيد التحديث</span></div></section>
 
     <section class="about-section section" id="about">
       <div class="container about-layout">
         <div class="about-visual reveal">
           <div class="about-logo-card"><img class="official-logo" src="./assets/images/logo.png" alt="شعار شركة سليمة" width="126" height="67" loading="lazy"><span data-i18n="company">شركة سليمة</span></div>
-          <img class="about-product product-a" src="assets/products/real/tuna.png" alt="تونة سليمة" width="1122" height="1402" loading="lazy">
-          <img class="about-product product-b" src="assets/products/real/beans.png" alt="فول سليمة" width="1122" height="1402" loading="lazy">
+          <img class="about-product product-a" src="assets/products/real/tuna.png" alt="تونة سليمة" width="1122" height="1402" loading="lazy" decoding="async">
+          <img class="about-product product-b" src="assets/products/real/beans.png" alt="فول سليمة" width="1122" height="1402" loading="lazy" decoding="async">
           <div class="about-ring"></div>
         </div>
 
@@ -228,11 +258,17 @@
       </div>
       <div class="footer-links">
         <h3 data-i18n="quickLinks">روابط سريعة</h3>
-        <a href="#products" data-i18n="navProducts">المنتجات</a><a href="#gallery" data-i18n="navGallery">المعرض</a><a href="#about" data-i18n="navAbout">من نحن</a>
+        <a href="#products" data-i18n="navProducts">المنتجات</a><a href="#gallery" data-i18n="navGallery">المعرض</a><a href="#location" data-i18n="navLocation">موقعنا</a><a href="#about" data-i18n="navAbout">من نحن</a>
+      </div>
+      <div class="footer-links">
+        <h3 data-i18n="productCategories">فئات المنتجات</h3>
+        <a href="#products" data-footer-group="rice" data-i18n="footerRice">الأرز</a><a href="#products" data-footer-group="canned" data-i18n="footerCanned">المعلبات</a><a href="#products" data-footer-group="oil" data-i18n="footerOil">الزيوت</a><a href="#products" data-footer-group="tissues" data-i18n="footerTissues">المحارم</a>
       </div>
       <div class="footer-note">
-        <h3 data-i18n="sitePurpose">هدف الموقع</h3>
-        <p data-i18n="sitePurposeText">عرض المنتجات فقط دون تسجيل أو بيع أو شراء.</p>
+        <h3 data-i18n="footerResources">المصادر</h3>
+        <a href="./assets/catalog/salima-catalog.pdf" download data-i18n="downloadCatalog">تحميل الكتالوج</a>
+        <a href="#compare" data-i18n="compareTitle">اختر الأرز المناسب لطبختك</a>
+        <a href="#contact" data-i18n="contactTitle">بيانات التواصل</a>
       </div>
     </div>
     <div class="container footer-bottom">
@@ -246,10 +282,11 @@
   <dialog class="product-modal" id="productModal" aria-labelledby="modalTitle">
     <div class="modal-shell">
       <button class="modal-close" id="modalClose" type="button" aria-label="إغلاق">×</button>
-      <div class="modal-image-wrap"><img id="modalImage" src="" alt=""></div>
+      <div class="modal-image-wrap"><img id="modalImage" src="" alt="" width="1122" height="1402"><button class="image-zoom-btn" id="modalZoom" type="button" data-i18n="zoomImage">تكبير الصورة</button><div class="modal-thumbnails" id="modalThumbnails" hidden></div></div>
       <div class="modal-content">
         <span class="modal-category" id="modalCategory"></span>
         <h2 id="modalTitle"></h2>
+        <div class="modal-meta" id="modalMeta"></div>
         <p class="modal-description" id="modalDescription"></p>
         <div class="detail-list">
           <article><span class="detail-icon">✓</span><div><h3 data-i18n="detailUse">الاستخدام المقترح</h3><p id="modalUse"></p></div></article>
@@ -257,6 +294,8 @@
           <article><span class="detail-icon">▣</span><div><h3 data-i18n="detailPackaging">العبوة</h3><p id="modalPackaging"></p></div></article>
         </div>
         <p class="modal-disclaimer" data-i18n="detailsDisclaimer">ملاحظة: الصور والبيانات الحالية توضيحية ويمكن استبدالها ببيانات العبوة الرسمية.</p>
+        <div class="modal-actions"><a class="primary-btn" id="productPageLink" href="./product.html" data-i18n="openProductPage">فتح صفحة المنتج</a></div>
+        <section class="related-products" id="relatedProducts" hidden><h3 data-i18n="relatedTitle">قد يعجبك أيضًا</h3><div class="related-grid" id="relatedGrid"></div></section>
       </div>
     </div>
   </dialog>
@@ -270,5 +309,7 @@
 
   <script src="js/products.js"></script>
   <script src="js/main.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"شركة سليمة","url":"https://ahmad150101.github.io/Salima-website/","logo":"https://ahmad150101.github.io/Salima-website/assets/images/logo.png"}</script>
+  <noscript><p class="noscript-note">المحتوى الأساسي متاح، لكن البحث والفلاتر وتفاصيل المنتجات التفاعلية تتطلب JavaScript.</p></noscript>
 </body>
 </html>

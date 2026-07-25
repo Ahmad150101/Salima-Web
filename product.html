@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="تفاصيل أحد منتجات شركة سليمة.">
+  <meta name="theme-color" content="#0b2b61">
+  <meta name="robots" content="index,follow">
+  <link rel="icon" href="./assets/images/logo.png" type="image/png">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>تفاصيل المنتج | شركة سليمة</title>
+</head>
+<body class="product-page-body">
+  <header class="product-page-header">
+    <div class="container">
+      <a href="./index.html#products" class="site-logo-link" aria-label="شركة سليمة"><img class="official-logo navbar-logo" src="./assets/images/logo.png" alt="شعار شركة سليمة" width="142" height="76"></a>
+      <div class="nav-actions">
+        <button class="language-btn" id="productLanguage" type="button" aria-label="Change language">EN</button>
+        <button class="icon-btn" id="productTheme" type="button" aria-label="تفعيل الوضع الداكن">◐</button>
+      </div>
+    </div>
+  </header>
+  <main class="product-page-main">
+    <div class="container">
+      <a class="text-link product-back" href="./index.html#products" id="productBack">← العودة إلى المنتجات</a>
+      <section class="product-page-card" id="productPageCard" hidden>
+        <div class="product-page-image"><img id="productPageImage" src="" alt="" width="1122" height="1402"></div>
+        <div class="product-page-copy">
+          <span class="modal-category" id="productPageCategory"></span>
+          <h1 id="productPageTitle"></h1>
+          <div class="modal-meta" id="productPageMeta"></div>
+          <p id="productPageDescription"></p>
+          <div class="detail-list" id="productPageDetails"></div>
+        </div>
+      </section>
+      <section class="product-page-related" id="productPageRelated" hidden><h2 id="productRelatedTitle">قد يعجبك أيضًا</h2><div class="products-grid" id="productRelatedGrid"></div></section>
+      <section class="empty-state" id="productNotFound" hidden><h1>المنتج غير موجود</h1><p>تعذر العثور على المنتج المطلوب.</p><a class="primary-btn" href="./index.html#products">العودة إلى المنتجات</a></section>
+    </div>
+  </main>
+  <script src="./js/products.js"></script>
+  <script src="./js/product.js"></script>
+</body>
+</html>
