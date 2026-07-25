@@ -270,6 +270,10 @@ function updateScrollUI() {
 
 let revealObserver;
 function initRevealObserver(parent = document) {
+  if (!("IntersectionObserver" in window)) {
+    $$(".reveal", parent).forEach((element) => element.classList.add("visible"));
+    return;
+  }
   if (!revealObserver) {
     revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
@@ -285,6 +289,10 @@ function initRevealObserver(parent = document) {
 
 function animateCounters() {
   const counters = $$('[data-count]');
+  if (!("IntersectionObserver" in window)) {
+    counters.forEach((counter) => { counter.textContent = counter.dataset.count; });
+    return;
+  }
   const counterObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
@@ -391,7 +399,19 @@ function init() {
   animateCounters();
   updateScrollUI();
   const slides = $$(".hero-slide"); const dots = $$("#sliderDots button"); let slideIndex = 0;
-  if (slides.length > 1) setInterval(() => { slides[slideIndex].classList.remove("active"); dots[slideIndex]?.classList.remove("active"); slideIndex = (slideIndex + 1) % slides.length; slides[slideIndex].classList.add("active"); dots[slideIndex]?.classList.add("active"); }, 4200);
+  const showSlide = (index) => {
+    slideIndex = (index + slides.length) % slides.length;
+    slides.forEach((slide, i) => slide.classList.toggle("active", i === slideIndex));
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === slideIndex);
+      dot.setAttribute("aria-current", i === slideIndex ? "true" : "false");
+    });
+  };
+  dots.forEach((dot, index) => dot.addEventListener("click", () => showSlide(index)));
+  if (slides.length > 1 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    window.setInterval(() => showSlide(slideIndex + 1), 4200);
+  }
+  if (slides.length) showSlide(0);
   window.setTimeout(() => elements.loader.classList.add("hide"), 450);
 }
 
