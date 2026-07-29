@@ -2,4 +2,12 @@
 .vscode/
 Thumbs.db
 .DS_Store
+*.tmp
+*.log
 *.zip
+node_modules/
+dist/
+coverage/
+tests/artifacts/
+tests/screenshots/
+preview-*.png

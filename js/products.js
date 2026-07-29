@@ -1,17 +1,52 @@
-﻿"use strict";
+"use strict";
 
-const SALIMA_PRODUCTS = [
-  {id:"set-elkol-rice",category:"food",group:"rice",brand:"set-elkol",type:{ar:"بسمتي",en:"Basmati"},image:"assets/products/real/set-elkol-rice.png",featured:true,weight:"5 كغم",ar:{name:"أرز ست الكل بسمتي",short:"أرز بسمتي فاخر طويل الحبة بعبوة 5 كغم.",description:"أرز ست الكل البسمتي طويل الحبة، مناسب للأطباق التي تحتاج حبّة مفلفلة وشكلًا أنيقًا بعد الطهي.",use:"الكبسة، المندي، البرياني والأطباق الرئيسية.",storage:"يُحفظ في مكان جاف وبارد بعيدًا عن الرطوبة.",packaging:"عبوة محكمة الإغلاق - 5 كغم."},en:{name:"Set El Kol Premium Basmati Rice",short:"Premium extra-long basmati rice in a 5 kg pack.",description:"Set El Kol premium extra-long basmati rice, ideal for dishes that need separate, elegant grains.",use:"Kabsa, mandi, biryani and main dishes.",storage:"Store in a cool, dry place away from moisture.",packaging:"Resealable 5 kg pack."}},
-  {id:"sunbird-rice",category:"food",group:"rice",brand:"sunbird",type:{ar:"ياسمين",en:"Jasmine"},image:"assets/products/real/sunbird-rice.png",featured:true,weight:"5 كغم",ar:{name:"أرز SunBird ياسمين",short:"أرز ياسمين تايلندي عطري للاستخدام اليومي.",description:"أرز ياسمين عطري من تايلاند بحبة ناعمة ورائحة مميزة، مناسب للأطباق الآسيوية واليومية.",use:"الأطباق الآسيوية، الأرز الأبيض والوجبات المنزلية.",storage:"يُحفظ في مكان جاف وبارد.",packaging:"كيس أرز ياسمين 5 كغم."},en:{name:"SunBird Jasmine Rice",short:"Fragrant Thai jasmine rice for everyday cooking.",description:"Thai fragrant jasmine rice with a soft grain and distinctive aroma.",use:"Asian dishes, steamed rice and daily meals.",storage:"Store in a cool, dry place.",packaging:"5 kg jasmine rice sack."}},
-  {id:"aeroplane-rice",category:"food",group:"rice",brand:"aeroplane",type:{ar:"بسمتي",en:"Basmati"},image:"assets/products/real/aeroplane-rice.png",featured:false,weight:"7 كغم",ar:{name:"أرز Aeroplane بسمتي",short:"أرز بسمتي هندي طويل الحبة بعبوة 7 كغم.",description:"أرز بسمتي هندي طويل الحبة بعبوة عملية ذات مقبض، مناسب للعائلات والاستخدام المتكرر.",use:"البرياني، الكبسة والأرز المفلفل.",storage:"يُحفظ بعيدًا عن الرطوبة والحرارة.",packaging:"كيس بمقبض - 7 كغم."},en:{name:"Aeroplane Basmati Rice",short:"Extra-long Indian basmati rice in a 7 kg pack.",description:"Long-grain Indian basmati rice in a practical handled pack.",use:"Biryani, kabsa and fluffy rice dishes.",storage:"Keep away from moisture and heat.",packaging:"Handled 7 kg bag."}},
-  {id:"atlantic-rice",category:"food",group:"rice",brand:"atlantic",type:{ar:"كامولينو",en:"Camolino"},image:"assets/products/real/atlantic-rice.png",featured:false,weight:"5 كغم",ar:{name:"أرز Atlantic كامولينو",short:"أرز أبيض كامولينو بعبوة 5 كغم.",description:"أرز كامولينو أبيض بحبة متوسطة، مناسب للطبخ اليومي والوصفات المنزلية المتنوعة.",use:"المحاشي، الأرز اليومي والأطباق الجانبية.",storage:"يُحفظ في مكان جاف وبارد.",packaging:"عبوة شفافة جزئيًا - 5 كغم."},en:{name:"Atlantic Camolino White Rice",short:"Camolino white rice in a 5 kg pack.",description:"Medium-grain camolino white rice for everyday cooking and varied recipes.",use:"Stuffed vegetables, daily rice and side dishes.",storage:"Store in a cool, dry place.",packaging:"Partially transparent 5 kg pack."}},
-  {id:"set-elkol-tissues",category:"home",group:"tissues",brand:"set-elkol",type:{ar:"محارم",en:"Tissues"},image:"assets/products/real/set-elkol-tissues.png",featured:true,weight:"",ar:{name:"محارم ست الكل",short:"محارم ناعمة بتصميم زهري للاستخدام اليومي.",description:"محارم ست الكل بعبوة أنيقة وناعمة مناسبة للمنزل والمكتب.",use:"الاستخدام اليومي في المنزل أو المكتب.",storage:"تُحفظ في مكان نظيف وجاف.",packaging:"عبوة محارم مغلفة."},en:{name:"Set El Kol Tissues",short:"Soft floral-design tissues for everyday use.",description:"Soft Set El Kol tissues in an elegant pack for home and office.",use:"Everyday use at home or work.",storage:"Keep in a clean, dry place.",packaging:"Wrapped tissue pack."}},
-  {id:"diana-tissues",category:"home",group:"tissues",brand:"diana",type:{ar:"محارم",en:"Tissues"},image:"assets/products/real/diana-tissues.png",featured:false,weight:"",ar:{name:"محارم ديانا",short:"محارم ناعمة بعبوة زرقاء عملية.",description:"محارم ديانا بعبوة عملية وهوية زرقاء واضحة، مناسبة للاستخدام اليومي.",use:"المنزل، المكتب والأماكن العامة.",storage:"تُحفظ بعيدًا عن الرطوبة.",packaging:"عبوة محارم ديانا."},en:{name:"Diana Tissues",short:"Soft tissues in a practical blue pack.",description:"Diana tissues in a practical, easy-to-recognize blue package.",use:"Home, office and shared spaces.",storage:"Keep away from moisture.",packaging:"Diana tissue pack."}},
-  {id:"tuna",category:"canned",group:"canned",brand:"salima",type:{ar:"تونة",en:"Tuna"},image:"assets/products/real/tuna.png",featured:true,weight:"",ar:{name:"تونة سليمة الخفيفة",short:"قطع تونة خفيفة في زيت دوار الشمس.",description:"تونة سليمة الخفيفة بقطع متماسكة في زيت دوار الشمس، مناسبة للوجبات السريعة.",use:"السلطات، السندويشات والوجبات الخفيفة.",storage:"تُحفظ في مكان بارد وجاف، وبعد الفتح تُبرد.",packaging:"علبة معدنية سهلة التخزين."},en:{name:"Salima Light Tuna Chunks",short:"Light tuna chunks in sunflower oil.",description:"Firm Salima light tuna chunks packed in sunflower oil.",use:"Salads, sandwiches and quick meals.",storage:"Store cool and dry; refrigerate after opening.",packaging:"Compact metal can."}},
-  {id:"beans",category:"canned",group:"canned",brand:"salima",type:{ar:"فول مدمس",en:"Fava Beans"},image:"assets/products/real/beans.png",featured:true,weight:"",ar:{name:"فول مدمس سليمة",short:"فول مدمس جاهز للأكل بدون مواد حافظة.",description:"فول مدمس سليمة جاهز للتقديم، مناسب للفطور والوجبات السريعة.",use:"الفطور، المقبلات والأطباق الجانبية.",storage:"يُحفظ في مكان جاف وبارد وبعد الفتح يُبرد.",packaging:"علبة معدنية."},en:{name:"Salima Foul Medammas",short:"Ready-to-eat fava beans with no preservatives.",description:"Ready-to-serve Salima fava beans for breakfast and quick meals.",use:"Breakfast, appetizers and side dishes.",storage:"Store cool and dry; refrigerate after opening.",packaging:"Metal can."}},
-  {id:"oil",category:"oil",group:"oil",brand:"salima",type:{ar:"زيت دوار الشمس",en:"Sunflower Oil"},image:"assets/products/real/oil.png",featured:false,weight:"5 لتر",ar:{name:"زيت دوار الشمس سليمة",short:"زيت دوار الشمس للطهي والقلي بعبوة عائلية.",description:"زيت دوار الشمس سليمة بعبوة كبيرة عملية للاستخدام المنزلي اليومي.",use:"الطهي، القلي وتحضير الوجبات.",storage:"يُحفظ بعيدًا عن الضوء والحرارة.",packaging:"عبوة بلاستيكية 5 لتر."},en:{name:"Salima Sunflower Oil",short:"Family-size sunflower oil for cooking and frying.",description:"Salima sunflower oil in a practical large bottle for daily household use.",use:"Cooking, frying and meal preparation.",storage:"Keep away from light and heat.",packaging:"5 L plastic bottle."}}
+const SALIMA_CATEGORIES = [
+  { id: "tissues", nameAr: "المحارم", nameEn: "Tissues" },
+  { id: "rice", nameAr: "الأرز", nameEn: "Rice" },
+  { id: "oils", nameAr: "الزيوت", nameEn: "Oils" },
+  { id: "canned", nameAr: "المعلبات", nameEn: "Canned goods" }
 ];
 
 const SALIMA_BRANDS = [
-  {id:"all",ar:"الكل",en:"All"},{id:"salima",ar:"سليمة",en:"Salima"},{id:"set-elkol",ar:"ست الكل",en:"Set El Kol"},{id:"sunbird",ar:"SunBird",en:"SunBird"},{id:"aeroplane",ar:"Aeroplane",en:"Aeroplane"},{id:"atlantic",ar:"Atlantic",en:"Atlantic"},{id:"diana",ar:"Diana",en:"Diana"}
+  { id: "mona", category: "tissues", nameAr: "منى", nameEn: "Mona" },
+  { id: "maram", category: "tissues", nameAr: "مرام", nameEn: "Maram" },
+  { id: "rania", category: "tissues", nameAr: "رانيا", nameEn: "Rania" },
+  { id: "hana", category: "tissues", nameAr: "هنا", nameEn: "Hana" },
+  { id: "dania", category: "tissues", nameAr: "دانيا", nameEn: "Dania" },
+  { id: "set-el-kol-tissues", category: "tissues", nameAr: "ست الكل", nameEn: "Set El Kol" },
+  { id: "aeroplane", category: "rice", nameAr: "AEROPLANE", nameEn: "AEROPLANE" },
+  { id: "atlantic", category: "rice", nameAr: "ATLANTIC", nameEn: "ATLANTIC" },
+  { id: "set-el-kol", category: "rice", nameAr: "SET EL KOL", nameEn: "SET EL KOL" }
 ];
+
+const emptyOffer = () => ({
+  active: false, titleAr: "", titleEn: "", detailsAr: "", detailsEn: "", startDate: "", endDate: ""
+});
+
+const product = (data) => ({
+  id: "", category: "", brand: "", nameAr: "", nameEn: "", images: [],
+  weightAr: "", weightEn: "", quantityAr: "", quantityEn: "", piecesCount: "",
+  packageCount: "", typeAr: "", typeEn: "", descriptionAr: "", descriptionEn: "",
+  keywordsAr: [], keywordsEn: [], featured: false, isNew: false, offer: emptyOffer(),
+  ...data
+});
+
+const SALIMA_PRODUCTS = [
+  product({id:"tissues-mona",category:"tissues",brand:"mona",nameAr:"محارم منى",nameEn:"Mona Tissues",images:["assets/products/tissues.svg"],typeAr:"محارم",typeEn:"Tissues",keywordsAr:["محارم","منى"],keywordsEn:["tissues","mona"]}),
+  product({id:"tissues-maram",category:"tissues",brand:"maram",nameAr:"محارم مرام",nameEn:"Maram Tissues",images:["assets/products/tissues.svg"],typeAr:"محارم",typeEn:"Tissues",keywordsAr:["محارم","مرام"],keywordsEn:["tissues","maram"]}),
+  product({id:"tissues-rania",category:"tissues",brand:"rania",nameAr:"محارم رانيا",nameEn:"Rania Tissues",images:["assets/products/tissues.svg"],typeAr:"محارم",typeEn:"Tissues",keywordsAr:["محارم","رانيا"],keywordsEn:["tissues","rania"]}),
+  product({id:"tissues-hana",category:"tissues",brand:"hana",nameAr:"محارم هنا",nameEn:"Hana Tissues",images:["assets/products/tissues.svg"],typeAr:"محارم",typeEn:"Tissues",keywordsAr:["محارم","هنا"],keywordsEn:["tissues","hana"]}),
+  product({id:"tissues-dania",category:"tissues",brand:"dania",nameAr:"محارم دانيا",nameEn:"Dania Tissues",images:["assets/products/tissues.svg"],typeAr:"محارم",typeEn:"Tissues",keywordsAr:["محارم","دانيا"],keywordsEn:["tissues","dania"]}),
+  product({id:"tissues-set-el-kol",category:"tissues",brand:"set-el-kol-tissues",nameAr:"محارم ست الكل",nameEn:"Set El Kol Tissues",images:["assets/products/real/set-elkol-tissues.png"],typeAr:"محارم",typeEn:"Tissues",keywordsAr:["محارم","ست الكل"],keywordsEn:["tissues","set el kol"],featured:true}),
+  product({id:"rice-aeroplane",category:"rice",brand:"aeroplane",nameAr:"أرز AEROPLANE",nameEn:"AEROPLANE Rice",images:["assets/products/real/aeroplane-rice.png"],typeAr:"أرز",typeEn:"Rice",keywordsAr:["أرز","ارز"],keywordsEn:["rice","aeroplane"],featured:true}),
+  product({id:"rice-atlantic",category:"rice",brand:"atlantic",nameAr:"أرز ATLANTIC",nameEn:"ATLANTIC Rice",images:["assets/products/real/atlantic-rice.png"],typeAr:"أرز",typeEn:"Rice",keywordsAr:["أرز","ارز"],keywordsEn:["rice","atlantic"]}),
+  product({id:"rice-set-el-kol",category:"rice",brand:"set-el-kol",nameAr:"أرز SET EL KOL",nameEn:"SET EL KOL Rice",images:["assets/products/real/set-elkol-rice.png"],typeAr:"أرز",typeEn:"Rice",keywordsAr:["أرز","ارز","ست الكل"],keywordsEn:["rice","set el kol"],featured:true}),
+  product({id:"oil-ukrainian",category:"oils",nameAr:"زيت أوكراني",nameEn:"Ukrainian Oil",images:["assets/products/oil.svg"],typeAr:"زيت",typeEn:"Oil",keywordsAr:["زيت","أوكراني","اوكراني"],keywordsEn:["oil","ukrainian"]}),
+  product({id:"oil-turkish",category:"oils",nameAr:"زيت تركي",nameEn:"Turkish Oil",images:["assets/products/oil.svg"],typeAr:"زيت",typeEn:"Oil",keywordsAr:["زيت","تركي"],keywordsEn:["oil","turkish"]}),
+  product({id:"canned-tuna",category:"canned",nameAr:"تونة",nameEn:"Tuna",images:["assets/products/real/tuna.png"],typeAr:"تونة",typeEn:"Tuna",keywordsAr:["تونة","معلبات"],keywordsEn:["tuna","canned"],featured:true}),
+  product({id:"canned-beans",category:"canned",nameAr:"فول عادي",nameEn:"Fava Beans",images:["assets/products/real/beans.png"],typeAr:"فول عادي",typeEn:"Fava beans",keywordsAr:["فول","عادي","معلبات"],keywordsEn:["beans","fava","canned"]}),
+  product({id:"canned-spicy-beans",category:"canned",nameAr:"فول حار",nameEn:"Spicy Fava Beans",images:["assets/products/beans.svg"],typeAr:"فول حار",typeEn:"Spicy fava beans",keywordsAr:["فول","حار","معلبات"],keywordsEn:["beans","spicy","canned"],isNew:true}),
+  product({id:"canned-sweet-corn",category:"canned",nameAr:"ذرة حلوة",nameEn:"Sweet Corn",images:["assets/products/corn.svg"],typeAr:"ذرة حلوة",typeEn:"Sweet corn",keywordsAr:["ذرة","ذره","حلوة","معلبات"],keywordsEn:["sweet","corn","canned"]})
+];
+
+const SALIMA_DATA = { categories: SALIMA_CATEGORIES, brands: SALIMA_BRANDS, products: SALIMA_PRODUCTS };
