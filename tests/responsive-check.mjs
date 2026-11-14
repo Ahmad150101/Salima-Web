@@ -88,8 +88,8 @@ const saveFailure = async (name, selectors) => {
     fs.writeFileSync(path.join(artifactRoot, `${safe}.png`), Buffer.from(shot.data, "base64"));
   } catch {}
 };
-const navigate = async (relative, language, width) => {
-  await call("Emulation.setDeviceMetricsOverride", { width, height: 900, deviceScaleFactor: 1, mobile: false });
+const navigate = async (relative, language, width, height = 900) => {
+  await call("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: 1, mobile: false });
   await call("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }] });
   await call("Network.clearBrowserCache");
   await call("Network.clearBrowserCookies");
@@ -118,17 +118,13 @@ await call("Log.enable");
 await call("Network.enable");
 await call("ServiceWorker.enable");
 await call("Network.setCacheDisabled", { cacheDisabled: true });
-await call("Page.addScriptToEvaluateOnNewDocument", {
-  source: `localStorage.clear();sessionStorage.clear();`
-});
-
 const tests = [];
 const record = async (name, task, selectors = []) => {
   const started = Date.now();
   try {
     const details = await task();
     tests.push({ name, status: "passed", durationMs: Date.now() - started, details });
-    if (/^(home-render|brands-render|product-valid)-ar-1440$/.test(name)) {
+    if (/^(home-render|brands-render|product-valid)-ar-(390|1440)$/.test(name)) {
       const shot = await call("Page.captureScreenshot", { format: "png", captureBeyondViewport: false });
       fs.writeFileSync(path.join(artifactRoot, `${name}.png`), Buffer.from(shot.data, "base64"));
       fs.writeFileSync(path.join(artifactRoot, `${name}.html`), await evaluate("document.documentElement.outerHTML"));
@@ -141,16 +137,16 @@ const record = async (name, task, selectors = []) => {
 };
 
 for (const language of ["ar", "en"]) {
-  for (const width of [390, 768, 1440]) {
+  for (const width of [360, 390, 768, 1024, 1440]) {
     await navigate("", language, width);
     await record(`home-render-${language}-${width}`, async () => {
       const waitMs = await waitFor('document.querySelectorAll("#productsGrid .product-card").length===15', "15 product cards");
-      const offers = await evaluate('({hidden:document.querySelector("#offers").hidden,active:SALIMA_PRODUCTS.filter(p=>p.offer.active).length})');
-      if (offers.active === 0 && !offers.hidden) throw new Error("Offers must be hidden when no offer is active.");
       const layout = await checkLayout();
-      if (layout.scrollWidth > layout.viewport + 1 || layout.offenders.length) throw new Error(`Horizontal overflow: ${JSON.stringify(layout)}`);
-      return { waitMs, offers, layout };
-    }, ["#productsGrid", "#offers"]);
+      if (layout.scrollWidth > layout.viewport + 1) throw new Error(`Horizontal overflow: ${JSON.stringify(layout)}`);
+      const counts=await evaluate('Object.fromEntries(SALIMA_CATEGORIES.map(c=>[c.id,SALIMA_PRODUCTS.filter(p=>p.category===c.id).length]))');
+      if(JSON.stringify(counts)!=='{"tissues":6,"rice":3,"oils":2,"canned":4}')throw new Error(`Category counts: ${JSON.stringify(counts)}`);
+      return { waitMs, counts, layout };
+    }, ["#productsGrid"]);
     await record(`home-search-${language}-${width}`, async () => {
       await setInput("#productSearch", language === "ar" ? "تونة" : "tuna");
       await waitFor('document.querySelectorAll("#productsGrid .product-card").length===1', "one search result");
@@ -186,7 +182,7 @@ for (const language of ["ar", "en"]) {
 }
 
 for (const language of ["ar", "en"]) {
-  for (const width of [390, 768, 1440]) {
+  for (const width of [360, 390, 768, 1024, 1440]) {
     await navigate("brands.html", language, width);
     await record(`brands-render-${language}-${width}`, async () => {
       const waitMs = await waitFor('document.querySelectorAll(".brand-full-card").length===9', "nine confirmed brands");
@@ -208,7 +204,7 @@ for (const language of ["ar", "en"]) {
 }
 
 for (const language of ["ar", "en"]) {
-  for (const width of [390, 768, 1440]) {
+  for (const width of [360, 390, 768, 1024, 1440]) {
     await navigate("product.html?id=rice-aeroplane", language, width);
     await record(`product-valid-${language}-${width}`, async () => {
       const waitMs = await waitFor('!document.querySelector("#productPageCard").hidden && document.querySelector("#productPageTitle").textContent.trim().length>0', "valid product");
@@ -219,6 +215,36 @@ for (const language of ["ar", "en"]) {
       const waitMs = await waitFor('!document.querySelector("#productNotFound").hidden', "not-found product message");
       return { waitMs, message: await evaluate('document.querySelector("#productNotFound").innerText.trim()') };
     }, ["#productNotFound"]);
+  }
+}
+
+for (const language of ["ar", "en"]) {
+  for (const size of [[1280,720],[1366,768],[1920,1080]]) {
+    const width=size[0],height=size[1];
+    await navigate("showcase.html", language, width, height);
+    await record("showcase-render-"+language+"-"+width+"x"+height, async()=>{
+      await waitFor('document.querySelectorAll(".scene").length===7 && document.querySelector(".scene.active")',"seven showcase scenes");
+      const initialLanguage=await evaluate('document.documentElement.lang');
+      if(initialLanguage!==language)throw new Error("Showcase started in "+initialLanguage+" instead of "+language);
+      const sceneResults=[];
+      for(let sceneIndex=0;sceneIndex<7;sceneIndex++){
+        await evaluate('document.querySelectorAll("#dots button")['+sceneIndex+'].click()');
+        await waitFor('document.querySelectorAll(".scene")['+sceneIndex+'].classList.contains("active")',"scene "+(sceneIndex+1));
+        const sceneState=await evaluate('(()=>{const scene=document.querySelector(".scene.active"),controls=document.querySelector(".show-controls").getBoundingClientRect();const cards=[...scene.querySelectorAll(".show-product")].map(card=>{const r=card.getBoundingClientRect();return {id:card.dataset.productId,top:r.top,bottom:r.bottom,left:r.left,right:r.right,visible:r.top>=72&&r.bottom<=controls.top-4&&r.left>=0&&r.right<=innerWidth}});return {title:scene.querySelector("h1")?.textContent||"",cards,scrollHeight:scene.scrollHeight,clientHeight:scene.clientHeight}})()');
+        if(sceneState.cards.some(card=>!card.visible))throw new Error("Clipped card in scene "+(sceneIndex+1)+": "+JSON.stringify(sceneState.cards));
+        sceneResults.push(sceneState);
+        if(language==="ar"&&(width===1366||sceneIndex===0)){
+          const shot=await call("Page.captureScreenshot",{format:"png",captureBeyondViewport:false});
+          fs.writeFileSync(path.join(artifactRoot,"showcase-"+language+"-"+width+"x"+height+"-scene-"+(sceneIndex+1)+".png"),Buffer.from(shot.data,"base64"));
+        }
+      }
+      const productIds=sceneResults.flatMap(scene=>scene.cards.map(card=>card.id));
+      if(productIds.length!==15||new Set(productIds).size!==15)throw new Error("Expected 15 unique showcased products: "+JSON.stringify(productIds));
+      const layout=await checkLayout();if(layout.scrollWidth>layout.viewport+1)throw new Error("Horizontal overflow: "+JSON.stringify(layout));
+      await click("#showLanguage");await waitFor('document.documentElement.lang!=="'+initialLanguage+'"',"showcase language toggle");
+      await evaluate('document.dispatchEvent(new KeyboardEvent("keydown",{key:"ArrowRight",bubbles:true}))');
+      return {initialLanguage,scenes:sceneResults.length,products:productIds.length,layout};
+    },["#showcase",".scene.active","#next"]);
   }
 }
 

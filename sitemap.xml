@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://ahmad150101.github.io/Salima-Web/</loc></url>
-  <url><loc>https://ahmad150101.github.io/Salima-Web/brands.html</loc></url>
-  <url><loc>https://ahmad150101.github.io/Salima-Web/product.html</loc></url>
+  <url><loc>https://salima.ahmad150.com/</loc></url>
+  <url><loc>https://salima.ahmad150.com/brands.html</loc></url>
+  <url><loc>https://salima.ahmad150.com/showcase.html</loc></url>
+  <url><loc>https://salima.ahmad150.com/product.html?id=rice-aeroplane</loc></url>
 </urlset>

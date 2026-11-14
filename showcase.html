@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="عرض تفاعلي لمنتجات سليمة">
+  <meta property="og:title" content="عرض سليمة التفاعلي">
+  <meta property="og:description" content="تجربة عرض لمنتجات سليمة وأقسامها">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://salima.ahmad150.com/showcase.html">
+  <meta property="og:image" content="https://salima.ahmad150.com/assets/images/logo.png">
+  <link rel="canonical" href="https://salima.ahmad150.com/showcase.html">
+  <link rel="icon" href="assets/images/logo.png">
+  <link rel="stylesheet" href="css/showcase.css">
+  <title>عرض سليمة التفاعلي</title>
+</head>
+<body>
+  <header class="showcase-bar">
+    <a href="index.html" class="show-logo" aria-label="سليمة"><img src="assets/images/logo.png" alt="سليمة"></a>
+    <div class="show-progress"><span id="currentSlide">01</span><i><b id="progressBar"></b></i><span id="totalSlides">07</span></div>
+    <div>
+      <button id="showLanguage" aria-label="Change language">EN</button>
+      <button id="fullscreen" aria-label="ملء الشاشة">⛶</button>
+      <a href="index.html" aria-label="إغلاق العرض">×</a>
+    </div>
+  </header>
+  <main class="showcase" id="showcase" aria-live="polite"></main>
+  <nav class="show-controls" aria-label="التنقل بين المشاهد">
+    <button id="prev" aria-label="السابق">→</button><div id="dots"></div><button id="next" aria-label="التالي">←</button>
+  </nav>
+  <p class="show-hint" id="hint">استخدم الأسهم أو اسحب للتنقل</p>
+  <script src="js/products.js"></script>
+  <script src="js/showcase.js"></script>
+</body>
+</html>
